@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TaskItem>
+
+<h2>Task List</h2>
+<a asp-action="Create" class="btn btn-primary">Add New Task</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@(task.IsCompleted ? "Completed" : "Pending")</td>
+                <td>
+                    @if (task.Status == "In Progress")
+                    {
+                        <button class="btn btn-success" onclick="location.href='@Url.Action("ToggleStatus", new { id = task.Id })'">Mark as Completed</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-warning" onclick="location.href='@Url.Action("ToggleStatus", new { id = task.Id })'">Mark as In Progress</button>
+                    }
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@task.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@task.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

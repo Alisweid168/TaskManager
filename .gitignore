@@ -1,0 +1,53 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ebug-x86/
+[Dd]ebug-x64/
+[Dd]ebug-AnyCPU/
+[Dd]ist-AnyCPU/
+[Dd]ebug-netcoreapp3.1/
+[Dd]ebug-net5.0/
+[Dd]ebug-net6.0/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# .NET Core
+bin/
+obj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Core
+wwwroot/
+appsettings.Development.json
+appsettings.json
+
+# JetBrains Rider
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Tye
+.tye/
+
+# MacOS
+.DS_Store
